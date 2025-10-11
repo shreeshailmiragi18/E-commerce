@@ -6,7 +6,7 @@ import MainCarouselData from './MainCarouselData';
 
 const MainCarousel = () => {
     const items = MainCarouselData.map((item) => (
-    <img  className= "cursor-pointer h-150 w-full " role="presentation" src={item.image} alt="" />
+    <img  className= "cursor-pointer h-100 w-full" role="presentation" src={item.image} alt="" />
 ));
     return (
         <AliceCarousel
@@ -17,6 +17,7 @@ const MainCarousel = () => {
             disableButtonsControls
             animationDuration={800}
             animationType="ease-in-out"
+            bgColor="white"
      
         />
     );
