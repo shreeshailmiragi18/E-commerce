@@ -21,3 +21,4 @@ const HomeSectionCard = ({product}) => {
 };
 
 export default HomeSectionCard;
+ 
