@@ -17,7 +17,6 @@ const MainCarousel = () => {
             disableButtonsControls
             animationDuration={800}
             animationType="ease-in-out"
-            bgColor="white"
      
         />
     );
