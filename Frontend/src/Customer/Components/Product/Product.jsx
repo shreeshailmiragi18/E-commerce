@@ -1,8 +1,9 @@
 'use client'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { filters } from './FilterData';
 import { sortOptions } from './FilterData';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import { useLocation,useNavigate} from 'react-router-dom';
 
 
 import { useState } from 'react'
@@ -32,6 +33,38 @@ function classNames(...classes) {
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Derive selected filters from URL so they persist across refresh
+  const selectedFilters = useMemo(() => {
+    const params = new URLSearchParams(location.search)
+    const map = {}
+    params.forEach((val, key) => {
+      map[key] = val.split(',').filter(Boolean)
+    })
+    return map
+  }, [location.search])
+
+  const handleFilter = (value, sectionId) => {
+    const params = new URLSearchParams(location.search)
+    const current = params.get(sectionId)
+    const list = current ? current.split(',').filter(Boolean) : []
+    let updated
+    if (list.includes(value)) {
+      updated = list.filter(v => v !== value) // uncheck
+      if (updated.length === 0) {
+        params.delete(sectionId)
+      } else {
+        params.set(sectionId, updated.join(','))
+      }
+    } else {
+      updated = [...list, value]
+      params.set(sectionId, updated.join(','))
+    }
+    const query = params.toString()
+    navigate({ search: query ? `?${query}` : '' })
+  }
 
   return (
     <div className="bg-white">
@@ -78,15 +111,19 @@ export default function Product() {
                     </h3>
                     <DisclosurePanel className="pt-6">
                       <div className="space-y-6">
-                        {section.options.map((option, optionIdx) => (
+                        {section.options.map((option, optionIdx) => {
+                          const checked = (selectedFilters[section.id] || []).includes(option.value)
+                          return (
                           <div key={option.value} className="flex gap-3">
                             <div className="flex h-5 shrink-0 items-center">
                               <div className="group grid size-4 grid-cols-1">
                                 <input
-                                  defaultValue={option.value}
+                                  value={option.value}
                                   id={`filter-mobile-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
                                   type="checkbox"
+                                  checked={checked}
+                                  onChange={() => handleFilter(option.value, section.id)}
                                   className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -118,7 +155,7 @@ export default function Product() {
                               {option.label}
                             </label>
                           </div>
-                        ))}
+                        )})}
                       </div>
                     </DisclosurePanel>
                   </Disclosure>
@@ -204,13 +241,16 @@ export default function Product() {
                     </h3>
                     <DisclosurePanel className="pt-6">
                       <div className="space-y-4">
-                        {section.options.map((option, optionIdx) => (
+                        {section.options.map((option, optionIdx) => {
+                          const checked = (selectedFilters[section.id] || []).includes(option.value)
+                          return (
                           <div key={option.value} className="flex gap-3">
                             <div className="flex h-5 shrink-0 items-center">
                               <div className="group grid size-4 grid-cols-1">
                                 <input
-                                  defaultValue={option.value}
-                                  defaultChecked={option.checked}
+                                  onChange={()=>handleFilter(option.value, section.id)}
+                                  value={option.value}
+                                  checked={checked}
                                   id={`filter-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
                                   type="checkbox"
@@ -242,7 +282,7 @@ export default function Product() {
                               {option.label}
                             </label>
                           </div>
-                        ))}
+                        )})}
                       </div>
                     </DisclosurePanel>
                   </Disclosure>
