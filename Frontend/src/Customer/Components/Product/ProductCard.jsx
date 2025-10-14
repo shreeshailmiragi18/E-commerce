@@ -1,22 +1,22 @@
 import React from 'react'
 import './ProductCard.css'
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   return (
-      <div className='productCard w-[15rem] m-3 transition-all cursor-pointer'>
-          <div claassName='h-[20rem]'>
-              <img className='h-full w-full object-cover object-left-top ' src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/f/r/xl-k-spl668-yellow-sg-leman-original-imagznqcrahgq9rf.jpeg?q=70" alt="" />
+      <div className='productCard w-[15rem] h-[28rem] m-3 transition-all cursor-pointer overflow-hidden  bg-white flex flex-col'>
+          <div className='imagePart h-[20rem] overflow-hidden flex-none'>
+              <img className='h-full w-full object-cover object-top' src={product.imageUrl} alt={product.title || product.brand || 'product image'} />
           </div>
           <div className="textPart bg-white p-3">
               <div>
-                  <p className='font-bold opacity-60 text-left'>Pothys</p>
-                  <p className='text-left'>yellow silk kurthas for man wsdfaservdsf</p>
+                  <p className='font-bold opacity-60 text-left'>{product.brand}</p>
+                  <p className='text-left'>{product.title}</p>
                  
               </div>
               <div className="flex items-center space-x-2 ">
-                  <p className='font-semibold'>&#x20B9;99</p>
-                  <p className='line-through opacity-50'>&#x20B9;199</p>
-                  <p className='text-green-600 font-semibold'>70% off</p>
+                  <p className='font-semibold'>&#x20B9;{product.discountedPrice}</p>
+                  <p className='line-through opacity-50'>&#x20B9;{product.price}</p>
+                  <p className='text-green-600 font-semibold'>{product.discountPersent}% off</p>
               </div>
           </div>
       

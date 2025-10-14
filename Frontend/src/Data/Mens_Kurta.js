@@ -19,7 +19,19 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
+            {
+              "name": "XS",
+              "quantity": 12
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -47,7 +59,19 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL",
+              "quantity": 23
+            },
+            {
+              "name": "XS",
+            "quantity":15 
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -75,7 +99,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+           },
+            {
+              "name": "XS",
+              "quantity": 10
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -103,7 +135,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 17
+            },
+            {
+              "name": "XL", 
+              "quantity": 28
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -131,7 +171,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 15
+            },
+            {
+              "name": "XL", 
+              "quantity": 30
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -159,7 +207,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 25
+            },
+            {
+              "name": "XL", 
+              "quantity": 20
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -184,10 +240,18 @@ export const Mens_Kurta=[
               "name": "M",
               "quantity": 30
             },
-            {
+           {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 12
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -215,7 +279,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 12
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -243,6 +315,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 13
             }
           ],
           "quantity": 100,
@@ -299,6 +375,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+          },
+            {
+              "name": "XS",
+              "quantity": 22
             }
           ],
           "quantity": 100,
@@ -327,7 +407,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 12
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -355,6 +443,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 30
             }
           ],
           "quantity": 100,
@@ -383,6 +475,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+          },
+            {
+              "name": "XS",
+              "quantity": 18
             }
           ],
           "quantity": 100,
@@ -411,6 +507,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+          },
+            {
+              "name": "XS",
+              "quantity": 30
             }
           ],
           "quantity": 100,
@@ -439,6 +539,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 14
             }
           ],
           "quantity": 100,
@@ -467,6 +571,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+          },
+            {
+              "name": "XS",
+              "quantity": 16
             }
           ],
           "quantity": 100,
@@ -495,6 +603,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 10
             }
           ],
           "quantity": 100,
@@ -523,7 +635,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 12
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -551,6 +671,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 10
             }
           ],
           "quantity": 100,
@@ -579,6 +703,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 18
             }
           ],
           "quantity": 100,
@@ -635,6 +763,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 16
             }
           ],
           "quantity": 100,
@@ -663,6 +795,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+          },
+            {
+              "name": "XS",
+              "quantity": 13
             }
           ],
           "quantity": 100,
@@ -691,7 +827,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+          },
+            {
+              "name": "XS",
+              "quantity": 12
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -719,7 +863,11 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 25
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -775,7 +923,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 20
+            },
+            {
+              "name": "XL", 
+              "quantity": 20
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -831,6 +987,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 14
             }
           ],
           "quantity": 100,
@@ -859,6 +1019,10 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
+            },
+            {
+              "name": "XS",
+              "quantity": 11
             }
           ],
           "quantity": 100,
@@ -887,7 +1051,11 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 12
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -915,7 +1083,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 10
+            },
+            {
+              "name": "XL", 
+              "quantity": 15
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -943,7 +1119,11 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 10
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -971,7 +1151,16 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 26
+            },
+            {
+              "name": "XL", 
+              "quantity": 35
+            },
+            
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -999,7 +1188,11 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 10
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -1027,7 +1220,15 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 10
+            },
+            {
+              "name": "XL", 
+              "quantity": 30
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -1055,7 +1256,11 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 30
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -1083,7 +1288,11 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XL", 
+              "quantity": 30
+            },
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
@@ -1111,7 +1320,16 @@ export const Mens_Kurta=[
             {
               "name": "L",
               "quantity": 50
-            }
+            },
+            {
+              "name": "XS",
+              "quantity": 11
+           },
+            {
+              "name": "XL", 
+              "quantity": 10
+            },
+
           ],
           "quantity": 100,
           "topLavelCategory": "Men",
