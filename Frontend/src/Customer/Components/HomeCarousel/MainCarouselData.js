@@ -1,8 +1,8 @@
 import React from 'react';
-import Lehenga from '../../../Assets/Lehenga.jpg'
-import saree from '../../../Assets/saree.jpg'
-import western from '../../../Assets/western.webp'
-import newDress from '../../../Assets/newDress.jpg'
+import Lehenga from '../../../assets/Data/Lehenga.jpg'
+import saree from '../../../assets/Data/saree.jpg'
+import western from '../../../assets/Data/western.webp'
+import newDress from '../../../assets/Data/newDress.jpg'
 
 
 
