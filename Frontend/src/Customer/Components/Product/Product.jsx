@@ -36,7 +36,7 @@ export default function Product() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Derive selected filters from URL so they persist across refresh
+
   const selectedFilters = useMemo(() => {
     const params = new URLSearchParams(location.search)
     const map = {}
@@ -52,7 +52,7 @@ export default function Product() {
     const list = current ? current.split(',').filter(Boolean) : []
     let updated
     if (list.includes(value)) {
-      updated = list.filter(v => v !== value) // uncheck
+      updated = list.filter(v => v !== value) 
       if (updated.length === 0) {
         params.delete(sectionId)
       } else {
