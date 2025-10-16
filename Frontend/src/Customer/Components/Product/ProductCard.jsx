@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
           <div className='imagePart h-[20rem] overflow-hidden flex-none'>
               <img className='h-full w-full object-cover object-top' src={product.imageUrl} alt={product.title || product.brand || 'product image'} />
           </div>
-          <div className="textPart bg-white p-3">
+          <div className="textPart bg-white p-2">
               <div>
                   <p className='font-bold opacity-60 text-left'>{product.brand}</p>
                   <p className='text-left'>{product.title}</p>

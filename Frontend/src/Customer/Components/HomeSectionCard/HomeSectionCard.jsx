@@ -10,9 +10,9 @@ const HomeSectionCard = ({product}) => {
           alt=""
         />
       </div>
-      <div className="p-4">
+      <div className="p-2">
         <h3 className="text-lg font-medium text-gray-900">{product.brand}</h3>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-gray-500">
           {product.title}
         </p>
       </div>
