@@ -103,7 +103,7 @@ export default function ProductDetails() {
           />
                       <div className="flex flex-wrap space-x-5 items-left pl-4">
                           {product.images.map((item) => (
-                              <div key={item.id} className="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 mt-5">
+                              <div key={item.id} className="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 mt-2">
                               <img
                                   key={item.id}
                                   alt={item.alt}
