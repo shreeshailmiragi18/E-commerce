@@ -2,7 +2,7 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import React from 'react'
 
 const product = {
-  name: 'Basic Tee 6-Pack',
+  name: 'Basic Tee',
   price: '$192',
   href: '#',
   breadcrumbs: [
@@ -91,17 +91,17 @@ export default function ProductDetails() {
             </li>
           </ol>
         </nav>
-              <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 px-4 pt-10 ">
+              <section className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 px-4 pt-10 gap-2">
                   
 
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-lef pl-6">
                      
           <img
             alt={product.images[0].alt}
             src={product.images[0].src}
             className="h-150 w-120 rounded-lg  object-cover max-lg:hidden"
           />
-                      <div className="flex flex-wrap space-x-5 justify-center">
+                      <div className="flex flex-wrap space-x-5 items-left pl-4">
                           {product.images.map((item) => (
                               <div key={item.id} className="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 mt-5">
                               <img
@@ -117,7 +117,7 @@ export default function ProductDetails() {
                   
                   
                       <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 object-fit">
+          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 ">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
           </div>
 
@@ -211,7 +211,9 @@ export default function ProductDetails() {
 
               <button
                 type="submit"
-                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+                  className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white  focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+                  style={{ backgroundColor: '#432dd7'}}
+
               >
                 Add to bag
               </button>
