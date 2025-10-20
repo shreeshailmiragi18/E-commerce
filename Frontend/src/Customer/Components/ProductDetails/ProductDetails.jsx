@@ -194,8 +194,7 @@ export default function ProductDetails() {
                           className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-indigo-600 has-checked:bg-indigo-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-600 has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25"
                         >
                           <input
-                            defaultValue={size.id}
-                            defaultChecked={size === product.sizes[2]}
+                            defaultValue={size.name}
                             name="size"
                             type="radio"
                             disabled={!size.inStock}
@@ -213,7 +212,7 @@ export default function ProductDetails() {
                 <Button
                   className="secondary w-full"
                   variant="contained"
-                  sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}
+                  sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd", mt: "2rem" }}
                 >
                   Add to Cart
                 </Button>
@@ -359,8 +358,9 @@ export default function ProductDetails() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {Mens_Kurta.map((item, index)=><HomeSectionCard key={index} product={item}/>)}
           </div>
-        </section> 
+        </section>  
       </div>
     </div>
   );
 }
+
