@@ -9,10 +9,14 @@ import Cart from "./Customer/Components/Cart/Cart.jsx";
 import Checkout from "./Customer/Components/Checkout/Checkout.jsx";
 import Order from "./Customer/Components/Order/Order.jsx";
 import OrderDetails from "./Customer/Components/Order/OrderDetails.jsx";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="div">
+      <Routes>
+        <Route path="/" element={<CustomerRouters />} />
+      </Routes>
       <Navigation />
       <div>
         {/* <HomePage /> */}
