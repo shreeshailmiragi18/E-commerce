@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import ProductReviewCard from "./ProductReviewCard";
 import LinearProgress from "@mui/material/LinearProgress";
+import { Mens_Kurta } from "../../../Data/Mens_Kurta";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 
 const product = {
   name: "Basic Tee Pack-6",
@@ -350,6 +352,14 @@ export default function ProductDetails() {
             </Grid>
           </div>
         </section>
+
+        {/* similar products section */}
+        <section className="pt-10 w-full">
+          <h5 className="py-5 text-xl font-bold">Similar Products</h5>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {Mens_Kurta.map((item, index)=><HomeSectionCard key={index} product={item}/>)}
+          </div>
+        </section> 
       </div>
     </div>
   );
