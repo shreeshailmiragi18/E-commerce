@@ -1,4 +1,3 @@
-
 import React from "react";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
@@ -170,7 +169,12 @@ export default function ProductDetails() {
               {/* Reviews */}
               <div className="mt-6">
                 <div className="flex flex-center space-x-3">
-                  <Rating name="read-only" value={4.5} readOnly precision={0.5} />
+                  <Rating
+                    name="read-only"
+                    value={4.5}
+                    readOnly
+                    precision={0.5}
+                  />
                   <p className="opacity-50 text-sm">56540 Ratings</p>
                   <p className="m1-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
                     3870 Reviews
@@ -212,7 +216,12 @@ export default function ProductDetails() {
                 <Button
                   className="secondary w-full"
                   variant="contained"
-                  sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd", mt: "2rem" }}
+                  sx={{
+                    px: "2rem",
+                    py: "1rem",
+                    bgcolor: "#9155fd",
+                    mt: "2rem",
+                  }}
                 >
                   Add to Cart
                 </Button>
@@ -284,7 +293,7 @@ export default function ProductDetails() {
                   <div className="flex items-center gap-3">
                     <p className="text-sm w-20">Excellent</p>
                     <div className="flex-1 w-[400px]">
-                      <LinearProgress 
+                      <LinearProgress
                         variant="determinate"
                         value={40}
                         color="success"
@@ -293,11 +302,11 @@ export default function ProductDetails() {
                     </div>
                     <p className="text-sm opacity-60 w-16 text-right">19259</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-3">
                     <p className="text-sm w-20">Very Good</p>
                     <div className="flex-1 w-[400px]">
-                      <LinearProgress 
+                      <LinearProgress
                         variant="determinate"
                         value={30}
                         color="success"
@@ -306,24 +315,23 @@ export default function ProductDetails() {
                     </div>
                     <p className="text-sm opacity-60 w-16 text-right">8546</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-3">
                     <p className="text-sm w-20">Good</p>
                     <div className="flex-1 w-[400px]">
-                      <LinearProgress 
+                      <LinearProgress
                         variant="determinate"
                         value={25}
                         sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
-                        
                       />
                     </div>
                     <p className="text-sm opacity-60 w-16 text-right">5326</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-3">
                     <p className="text-sm w-20">Average</p>
                     <div className="flex-1 w-[400px]">
-                      <LinearProgress 
+                      <LinearProgress
                         variant="determinate"
                         value={15}
                         color="warning"
@@ -332,11 +340,11 @@ export default function ProductDetails() {
                     </div>
                     <p className="text-sm opacity-60 w-16 text-right">3485</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-3">
                     <p className="text-sm w-20">Poor</p>
                     <div className="flex-1 w-[400px]">
-                      <LinearProgress 
+                      <LinearProgress
                         variant="determinate"
                         value={5}
                         color="error"
@@ -346,7 +354,6 @@ export default function ProductDetails() {
                     <p className="text-sm opacity-60 w-16 text-right">1258</p>
                   </div>
                 </div>
-                 
               </Grid>
             </Grid>
           </div>
@@ -356,11 +363,12 @@ export default function ProductDetails() {
         <section className="pt-10 w-full">
           <h5 className="py-5 text-xl font-bold">Similar Products</h5>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {Mens_Kurta.map((item, index)=><HomeSectionCard key={index} product={item}/>)}
+            {Mens_Kurta.map((item, index) => (
+              <HomeSectionCard key={index} product={item} />
+            ))}
           </div>
-        </section>  
+        </section>
       </div>
     </div>
   );
 }
-
