@@ -1,11 +1,11 @@
-import { StarIcon } from "@heroicons/react/20/solid";
+
 import React from "react";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import ProductReviewCard from "./ProductReviewCard";
-import LinearProgress from '@mui/material/LinearProgress';
+import LinearProgress from "@mui/material/LinearProgress";
 
 const product = {
   name: "Basic Tee Pack-6",
@@ -168,7 +168,7 @@ export default function ProductDetails() {
               {/* Reviews */}
               <div className="mt-6">
                 <div className="flex flex-center space-x-3">
-                  <Rating name="read-only" value={5.5} readOnly />
+                  <Rating name="read-only" value={4.5} readOnly precision={0.5} />
                   <p className="opacity-50 text-sm">56540 Ratings</p>
                   <p className="m1-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
                     3870 Reviews
@@ -263,29 +263,89 @@ export default function ProductDetails() {
             Recent Review & Ratings
           </h5>
           <div className="border border-gray-200  p-5">
-            <Grid container spacing={7}>
-              <Grid item xs={7}>
-                <div className="space-y-5"></div>
-                {[1, 1, 1, 1, 1].map((item) => <ProductReviewCard />)}
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={7}>
+                <div className="space-y-5">
+                  {[1, 1, 1].map((item) => (
+                    <ProductReviewCard />
+                  ))}
+                </div>
               </Grid>
 
-              <Grid item xs={5}>
+              <Grid item xs={12} md={5} marginLeft={7}>
                 <h5 className="text-xl font-semibold pb-1">Product Ratings</h5>
                 <div className="flex items-center space-x-3">
                   <Rating value={4.5} readOnly precision={0.5} />
                   <p className="opacity-60">5850 Ratings</p>
                 </div>
 
-                <Box>
-                  <Grid container justifyContent="center" alignItems="center" gap={2}>
-                    <Grid items xs={2}>
-                         <p>Excellent</p>
-                    </Grid>
-                    <Grid items xs={7}>
-                            <LinearProgress variant="determinate" value={10} color="success" />
-                      </Grid>
-                  </Grid>
-                </Box>
+                <div className="pt-4 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <p className="text-sm w-20">Excellent</p>
+                    <div className="flex-1 w-[400px]">
+                      <LinearProgress 
+                        variant="determinate"
+                        value={40}
+                        color="success"
+                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
+                      />
+                    </div>
+                    <p className="text-sm opacity-60 w-16 text-right">19259</p>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <p className="text-sm w-20">Very Good</p>
+                    <div className="flex-1 w-[400px]">
+                      <LinearProgress 
+                        variant="determinate"
+                        value={30}
+                        color="success"
+                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
+                      />
+                    </div>
+                    <p className="text-sm opacity-60 w-16 text-right">8546</p>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <p className="text-sm w-20">Good</p>
+                    <div className="flex-1 w-[400px]">
+                      <LinearProgress 
+                        variant="determinate"
+                        value={25}
+                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
+                        
+                      />
+                    </div>
+                    <p className="text-sm opacity-60 w-16 text-right">5326</p>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <p className="text-sm w-20">Average</p>
+                    <div className="flex-1 w-[400px]">
+                      <LinearProgress 
+                        variant="determinate"
+                        value={15}
+                        color="warning"
+                        sx={{ bgcolor: "#d0d0d0", borderRadius: 2, height: 7 }}
+                      />
+                    </div>
+                    <p className="text-sm opacity-60 w-16 text-right">3485</p>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <p className="text-sm w-20">Poor</p>
+                    <div className="flex-1 w-[400px]">
+                      <LinearProgress 
+                        variant="determinate"
+                        value={5}
+                        color="error"
+                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
+                      />
+                    </div>
+                    <p className="text-sm opacity-60 w-16 text-right">1258</p>
+                  </div>
+                </div>
+                 
               </Grid>
             </Grid>
           </div>
