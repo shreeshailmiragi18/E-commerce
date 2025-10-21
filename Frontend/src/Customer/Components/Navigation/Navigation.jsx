@@ -23,7 +23,9 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Cart from "../Cart/Cart";
 
 const navigation = {
   categories: [
@@ -158,10 +160,37 @@ const navigation = {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openUserMenu = Boolean(anchorEl);
   const navigate = useNavigate();
+
   const handleCategoryClick = (category, section, item, close) => {
     navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
+  };
+
+  const handleUserClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMyOrders = () => {
+    navigate("/account/order");
+    handleCloseUserMenu();
+  };
+
+  const handleProfile = () => {
+    navigate("/account/profile");
+    handleCloseUserMenu();
+  };
+
+  const handleLogout = () => {
+    // Add your logout logic here
+    console.log("User logged out");
+    handleCloseUserMenu();
   };
 
   return (
@@ -416,7 +445,10 @@ export default function Navigation() {
                                                 close
                                               )
                                             }
-                                          ></p>
+                                            className="cursor-pointer hover:text-gray-800"
+                                          >
+                                            {item.name}
+                                          </p>
                                         </li>
                                       ))}
                                     </ul>
@@ -443,19 +475,33 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Sign in
-                  </a>
-                  <span aria-hidden="true" className="h-6 w-px bg-gray-200" />
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Create account
-                  </a>
+                  {/* Avatar with dropdown menu */}
+                  <div>
+                    <Avatar
+                      className="cursor-pointer"
+                      onClick={handleUserClick}
+                      sx={{
+                        bgcolor: "#9155fd",
+                        color: "white",
+                        cursor: "pointer",
+                      }}
+                    >
+                      U
+                    </Avatar>
+                    <Menu
+                      id="user-menu"
+                      anchorEl={anchorEl}
+                      open={openUserMenu}
+                      onClose={handleCloseUserMenu}
+                      MenuListProps={{
+                        "aria-labelledby": "user-button",
+                      }}
+                    >
+                      <MenuItem onClick={handleProfile}>Profile</MenuItem>
+                      <MenuItem onClick={handleMyOrders}>My Orders</MenuItem>
+                      <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                    </Menu>
+                  </div>
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
@@ -486,7 +532,10 @@ export default function Navigation() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                  <button
+                    onClick={() => navigate("/cart")}
+                    className="group -m-2 flex items-center p-2"
+                  >
                     <ShoppingBagIcon
                       aria-hidden="true"
                       className="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -495,7 +544,7 @@ export default function Navigation() {
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

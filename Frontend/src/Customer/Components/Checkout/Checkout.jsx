@@ -12,8 +12,9 @@ import OrderSummary from "./OrderSummary";
 const steps = ["Login", "Delivery Address", "Order Summary", "Payment"];
 
 const Checkout = () => {
-  const [activeStep, setActiveStep] = React.useState(0);
   const location = useLocation();
+
+  const [activeStep, setActiveStep] = React.useState(0);
   const querySearch = new URLSearchParams(location.search);
 
   const step = querySearch.get("step");

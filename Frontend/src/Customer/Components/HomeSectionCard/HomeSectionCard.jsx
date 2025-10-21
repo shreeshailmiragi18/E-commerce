@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const HomeSectionCard = ({product}) => {
+const HomeSectionCard = ({ product }) => {
+  const navigate = useNavigate();
   return (
-    <div className="cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-full border border-gray-200">
-      <div className="h-[13rem] w-[10rem]">
+    <div
+      onClick={() => navigate(`/product/${5}`)}
+      className="cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-full border border-gray-200"
+    >
+      <div className="h-[15rem] w-full overflow-hidden">
         <img
           className="object-cover object-top w-full h-full"
           src={product.imageUrl}
@@ -12,13 +17,10 @@ const HomeSectionCard = ({product}) => {
       </div>
       <div className="p-4">
         <h3 className="text-lg font-medium text-gray-900">{product.brand}</h3>
-        <p className="mt-2 text-sm text-gray-500">
-          {product.title}
-        </p>
+        <p className="mt-2 text-sm text-gray-500">{product.title}</p>
       </div>
     </div>
   );
 };
 
 export default HomeSectionCard;
- 

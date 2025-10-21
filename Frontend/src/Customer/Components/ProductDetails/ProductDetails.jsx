@@ -1,12 +1,12 @@
-import React from "react";
+import React, { use } from "react";
 import Rating from "@mui/material/Rating";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import ProductReviewCard from "./ProductReviewCard";
 import LinearProgress from "@mui/material/LinearProgress";
 import { Mens_Kurta } from "../../../Data/Mens_Kurta";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+import { useNavigate } from "react-router-dom";
 
 const product = {
   name: "Basic Tee Pack-6",
@@ -78,6 +78,12 @@ function classNames(...classes) {
 }
 
 export default function ProductDetails() {
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    navigate("/cart");
+  };
+
   return (
     <div className="bg-white lg:px-20">
       <div className="pt-6">
@@ -214,6 +220,7 @@ export default function ProductDetails() {
                 </div>
 
                 <Button
+                  onClick={handleAddToCart}
                   className="secondary w-full"
                   variant="contained"
                   sx={{
