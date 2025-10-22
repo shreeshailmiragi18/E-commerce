@@ -1,4 +1,4 @@
-package com.shree.Backend;
+package com.shree.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
