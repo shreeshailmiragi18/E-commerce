@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
-public class AddressEntity {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,15 +32,15 @@ public class AddressEntity {
     @ManyToOne
     @JoinColumn(name="user_id")
     @JsonIgnore
-    private UserEntity user;
+    private User user;
 
     private String mobile;
 
-    public AddressEntity() {
+    public Address() {
 
     }
 
-    public AddressEntity(Long id, String firstName, String lastName, String streetAddress, String city, String state, String zipCode, UserEntity user, String mobile) {
+    public Address(Long id, String firstName, String lastName, String streetAddress, String city, String state, String zipCode, User user, String mobile) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -108,11 +108,11 @@ public class AddressEntity {
         this.zipCode = zipCode;
     }
 
-    public UserEntity getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

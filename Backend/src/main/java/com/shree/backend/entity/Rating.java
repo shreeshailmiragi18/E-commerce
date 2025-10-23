@@ -1,23 +1,25 @@
 package com.shree.backend.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-public class RatingEntity {
+public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
+    private User user;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="product_id", nullable = false)
-    private ProductEntity product;
+    private Product product;
 
     @Column(name = "rating")
     private double rating;

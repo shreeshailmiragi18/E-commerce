@@ -1,9 +1,9 @@
 package com.shree.backend.entity;
 
 import jakarta.persistence.Column;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
 
-public class PaymentInformationEntity {
+public class PaymentInformation {
 
     @Column(name = "cardholder_name")
     private String cardholderName;
