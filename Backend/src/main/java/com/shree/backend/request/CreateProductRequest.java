@@ -17,6 +17,9 @@ public class CreateProductRequest {
 
     private int discountPrecent;
 
+    private String imageUrl;
+
+
     private int quality;
 
     private String brand;
@@ -59,6 +62,13 @@ public class CreateProductRequest {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public int getDiscountedPrice() {
