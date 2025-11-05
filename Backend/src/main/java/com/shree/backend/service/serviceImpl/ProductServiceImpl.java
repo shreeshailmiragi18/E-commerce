@@ -9,6 +9,7 @@ import com.shree.backend.request.CreateProductRequest;
 import com.shree.backend.service.ProductService;
 import com.shree.backend.service.UserService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static java.lang.classfile.AnnotationValue.of;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -123,6 +126,20 @@ public class ProductServiceImpl implements ProductService {
             products= products.stream().filter(p->colors.stream().anyMatch(c->c.equalsIgnoreCase((p.getColor()))))
                     .collect(Collectors.toList());
         }
-        return null;
+        if (stock != null) {
+
+            if (stock.equals("in_stock")){
+                products=products.stream().filter(p -> p.getQuantity()>0).collect(Collectors.toList());
+            }
+            else if(stock.equals("out_of_stock")){
+                products=products.stream().filter(p -> p.getQuantity()<1).collect(Collectors.toList());
+            }
+        }
+        int startIndex=(int) pageable.getOffset();
+        int endIndex= Math.min(startIndex+pageable.getPageSize(),products.size());
+
+        List<Product> filteredProducts=new PageImpl<>(pageContent,pageble,products,size())
+        return filteredProducts;
     }
+
 }
