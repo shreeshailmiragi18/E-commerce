@@ -7,6 +7,7 @@ import com.shree.backend.exception.UserException;
 import com.shree.backend.repository.UserRepository;
 import com.shree.backend.request.LoginRequest;
 import com.shree.backend.response.AuthResponse;
+import com.shree.backend.service.serviceImpl.CustomerUserServiceImpl;
 import com.shree.backend.service.serviceImpl.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,16 +26,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 public class AuthController {
 
+    private final CustomerUserServiceImpl customerUserServiceImpl;
     private JwtProvider jwtProvider;
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
     private UserServiceImpl userServiceImpl;
 
-    public AuthController(UserRepository userRepository,UserServiceImpl userServiceImpl,PasswordEncoder passwordEncoder,JwtProvider jwtProvider) {
+    public AuthController(UserRepository userRepository, UserServiceImpl userServiceImpl, PasswordEncoder passwordEncoder, JwtProvider jwtProvider, CustomerUserServiceImpl customerUserServiceImpl) {
         this.userRepository = userRepository;
         this.userServiceImpl = userServiceImpl;
         this.passwordEncoder = passwordEncoder;
         this.jwtProvider = jwtProvider;
+        this.customerUserServiceImpl = customerUserServiceImpl;
     }
 
     @PostMapping("/signup")
@@ -92,7 +95,7 @@ public class AuthController {
     }
 
     private Authentication authenticate(String username, String password) {
-        UserDetails userDetails = userServiceImpl.loadUserByUsername(username);
+        UserDetails userDetails = customerUserServiceImpl.loadUserByUsername(username);
 
         if(userDetails == null) {
             throw new BadCredentialsException("Invalid UserName");

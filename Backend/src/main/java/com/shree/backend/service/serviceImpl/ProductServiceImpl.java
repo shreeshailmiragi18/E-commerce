@@ -14,13 +14,12 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static java.lang.classfile.AnnotationValue.of;
+
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -77,7 +76,7 @@ public class ProductServiceImpl implements ProductService {
         product.setSizes(req.getSize());
         product.setQuantity(req.getQuality());
         product.setCategory(thirdLevel);
-        product.setCategory(LocalDateTime.now());
+        product.setCreatedAt(LocalDateTime.now());
 
         Product savedProduct = productRepository.save(product);
 
@@ -114,12 +113,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findProductByCategory(String category) {
-        return List.of();
+        return null;
     }
+
 
     @Override
     public Page<Product> getAllProduct(String category, List<String> colors, List<String> sizes, Integer minPrice, Integer maxPrice, Integer minDiscount, String sort, String stock, Integer pageNumber, Integer pageSize) {
-        Pageable pageable = PageRequest.of(pageNumber,pageSize);
+        Pageable pageble = PageRequest.of(pageNumber,pageSize);
 
         List<Product> products = productRepository.filterProducts(category,minPrice,minDiscount,sort);
         if(!colors.isEmpty()){
@@ -135,11 +135,14 @@ public class ProductServiceImpl implements ProductService {
                 products=products.stream().filter(p -> p.getQuantity()<1).collect(Collectors.toList());
             }
         }
-        int startIndex=(int) pageable.getOffset();
-        int endIndex= Math.min(startIndex+pageable.getPageSize(),products.size());
+        int startIndex=(int) pageble.getOffset();
+        int endIndex= Math.min(startIndex+ pageble.getPageSize(),products.size());
 
-        List<Product> filteredProducts=new PageImpl<>(pageContent,pageble,products,size())
-        return filteredProducts;
+        List<Product>pageContent = products.subList(startIndex,endIndex);
+
+
+        Page<Product> filteredProducts=new PageImpl<>(pageContent,pageble,products.size());
+        return  filteredProducts;
     }
 
 }
