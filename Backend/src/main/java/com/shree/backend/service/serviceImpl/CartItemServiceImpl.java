@@ -3,6 +3,7 @@ package com.shree.backend.service.serviceImpl;
 import com.shree.backend.entity.Cart;
 import com.shree.backend.entity.CartItem;
 import com.shree.backend.entity.Product;
+import com.shree.backend.entity.User;
 import com.shree.backend.exception.CartItemException;
 import com.shree.backend.exception.UserException;
 import com.shree.backend.repository.CartItemRepository;
@@ -10,6 +11,8 @@ import com.shree.backend.repository.CartRepository;
 import com.shree.backend.service.CartItemService;
 import com.shree.backend.service.UserService;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CartItemServiceImpl implements CartItemService {
@@ -37,22 +40,47 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public CartItem updateCartItem(Long userId, Long id, CartItem cartItem) throws CartItemException, UserException {
+        CartItem item = findCartItemById(id);
+        User user = userService.findUserById(item.getUserId());
+        if(user.getId().equals(userId)){
+            item.setQuantity(cartItem.getQuantity());
+            item.setPrice(item.getQuantity()*item.getProduct().getPrice());
+            item.setDiscountedPrice(item.getProduct().getDiscountedPrice()*item.getQuantity());
+        }
 
-        return null;
+        return cartItemRepository.save(item);
     }
 
     @Override
     public CartItem isCartItemExist(Cart cart, Product product, String size, Long userId) {
-        return null;
+
+        CartItem cartItem= cartItemRepository.isCartItemExist(cart,product,size,userId);
+        return cartItem;
     }
 
     @Override
     public void removeCartItem(Long userId, Long cartItemId) throws CartItemException, UserException {
+        CartItem cartItem = findCartItemById(cartItemId);
+        User user = userService.findUserById(cartItem.getUserId());
+        User reqUser = userService.findUserById(userId);
+
+        if(user.getId().equals(reqUser.getId())){
+            cartItemRepository.deleteById(cartItemId);
+        }
+        else{
+            throw new UserException("ypu cant remove another users item");
+        }
 
     }
 
     @Override
     public CartItem findCartItemById(Long cartItemId) throws CartItemException {
-        return null;
+
+        Optional<CartItem> opt = cartItemRepository.findById(cartItemId);
+
+        if(opt.isPresent()){
+            return opt.get();
+        }
+        throw new CartItemException("cart item not foun with id: "+cartItemId);
     }
 }
