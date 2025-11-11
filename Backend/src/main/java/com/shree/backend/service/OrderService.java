@@ -4,6 +4,7 @@ import com.shree.backend.entity.Address;
 import com.shree.backend.entity.Order;
 import com.shree.backend.entity.User;
 import com.shree.backend.exception.OrderException;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;

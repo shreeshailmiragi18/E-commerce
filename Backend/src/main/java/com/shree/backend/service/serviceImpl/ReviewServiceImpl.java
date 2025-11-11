@@ -10,10 +10,12 @@ import com.shree.backend.request.ReviewRequest;
 import com.shree.backend.service.ProductService;
 import com.shree.backend.service.ReviewService;
 import org.springframework.cglib.core.Local;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
 public class ReviewServiceImpl implements ReviewService {
 
     private ReviewRepository reviewRepository;

@@ -27,15 +27,12 @@ public class ProductController {
 
         System.out.println("complete products");
         return new ResponseEntity<>(res, HttpStatus.ACCEPTED);
-
     }
 
-    @GetMapping("/products/id/{priductId}")
-    public ResponseEntity<Product> getProductByIdHandler(@PathVariable Long priductId) throws ProductException {
-        Product product = productService.findProductById(priductId);
+    @GetMapping("/products/id/{productId}")
+    public ResponseEntity<Product> getProductByIdHandler(@PathVariable Long productId) throws ProductException {
+        Product product = productService.findProductById(productId);
 
         return new ResponseEntity<Product>(product, HttpStatus.ACCEPTED);
     }
-
-
 }

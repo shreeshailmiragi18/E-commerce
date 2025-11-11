@@ -4,11 +4,15 @@ import com.shree.backend.entity.Address;
 import com.shree.backend.entity.Order;
 import com.shree.backend.entity.User;
 import com.shree.backend.exception.OrderException;
+import com.shree.backend.repository.CartRepository;
+import com.shree.backend.service.CartItemService;
 import com.shree.backend.service.OrderService;
 import com.shree.backend.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OrderServiceImpl implements OrderService {
 
     private CartRepository cartRepository;

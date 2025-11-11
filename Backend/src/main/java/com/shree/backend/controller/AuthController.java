@@ -32,6 +32,7 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
     private UserServiceImpl userServiceImpl;
 
+
     public AuthController(UserRepository userRepository, UserServiceImpl userServiceImpl, PasswordEncoder passwordEncoder, JwtProvider jwtProvider, CustomerUserServiceImpl customerUserServiceImpl) {
         this.userRepository = userRepository;
         this.userServiceImpl = userServiceImpl;
